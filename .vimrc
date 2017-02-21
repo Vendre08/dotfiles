@@ -18,6 +18,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'vim-pandoc/vim-pandoc'
 
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -28,3 +30,5 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 set rnu
+
+colorscheme molokai
