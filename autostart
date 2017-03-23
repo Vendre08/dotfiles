@@ -1,0 +1,6 @@
+#!/bin/sh
+#this script changes the displayed wallpaper after login 
+#place this script in /etc/profile.d/ and run
+#sudo chmod +x autostart 
+#the path parameter can be changed to change the image displayed
+feh --bg-scale ~/Pictures/afi2.jpg 
