@@ -1,9 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set laststatus=2
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/VimIRC.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -21,6 +23,10 @@ Plugin 'vim-pandoc/vim-pandoc'
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,19 +38,4 @@ match OverLength /\%81v.\+/
 set rnu
 
 colorscheme molokai
-
-set laststatus=2
-au InsertEnter * hi statusline guibg=Cyan ctermfg=6 guifg=Black ctermbg=0
-au InsertLeave * hi statusline guibg=Purple ctermfg=5 guifg=Black ctermbg=0
-
-" default the statusline to purple when entering Vim
-hi statusline guibg=Purple ctermfg=5 guifg=Black ctermbg=0
-
-" Formats the statusline
-set statusline=%f                           " file name
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=\ %=                        " align left
-set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
-set statusline+=\ Col:%c                    " current column
+autocmd BufWritePre *.py :%s/\s\+$//e "get rid of traiing whitespace"
