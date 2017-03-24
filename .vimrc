@@ -26,10 +26,25 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
- 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
 set rnu
 
 colorscheme molokai
+
+set laststatus=2
+au InsertEnter * hi statusline guibg=Cyan ctermfg=6 guifg=Black ctermbg=0
+au InsertLeave * hi statusline guibg=Purple ctermfg=5 guifg=Black ctermbg=0
+
+" default the statusline to purple when entering Vim
+hi statusline guibg=Purple ctermfg=5 guifg=Black ctermbg=0
+
+" Formats the statusline
+set statusline=%f                           " file name
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=\ %=                        " align left
+set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
+set statusline+=\ Col:%c                    " current column
