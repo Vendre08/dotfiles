@@ -1,6 +1,14 @@
-#!/bin/sh
-#this script changes the displayed wallpaper after login 
+#!/bin/bash
+#this script randomly chooses one of two images and
+#sets is as the background
 #place this script in /etc/profile.d/ and run
 #sudo chmod +x autostart 
 #the path parameter can be changed to change the image displayed
-feh --bg-scale ~/Pictures/afi2.jpg 
+
+RANDOM=$$
+if (( $RANDOM % 2 == 0 ))
+then
+    feh --bg-scale ~/Pictures/afi2.jpg
+else
+    feh --bg-scale ~/Pictures/ts.jpg
+fi
