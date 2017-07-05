@@ -27,6 +27,10 @@ Plugin 'vim-airline/vim-airline'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'tpope/vim-speeddating'
+
+Plugin 'jceb/vim-orgmode'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,3 +43,5 @@ set rnu
 
 colorscheme molokai
 autocmd BufWritePre *.py :%s/\s\+$//e "get rid of traiing whitespace"
+
+let g:ycm_filetype_blacklist = {}

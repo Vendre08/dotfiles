@@ -1,14 +1,16 @@
 #!/bin/bash
-#this script randomly chooses one of two images and
-#sets is as the background
+#this script rchooses one of two images and
+#sets is as the background depending on the day
 #place this script in /etc/profile.d/ and run
 #sudo chmod +x autostart 
 #the path parameter can be changed to change the image displayed
 
-RANDOM=$$
-if (( $RANDOM % 2 == 0 ))
+currDate=`date +%j`
+currDate=${currDate#0}
+if (( $currDate % 2 == 0 ))
 then
     feh --bg-scale ~/Pictures/afi2.jpg
 else
     feh --bg-scale ~/Pictures/ts.jpg
 fi
+echo "did" > /home/sc/tst

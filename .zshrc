@@ -7,7 +7,9 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_SHORTEN_STRATEGY="Default"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,8 +91,17 @@ source $ZSH/oh-my-zsh.sh
 fortune | cowsay -f unipony-smaller
 source /opt/ros/kinetic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
+source /etc/profile.d/autostart
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go_work
 export PATH=$PATH:/$GOPATH/bin
+export PATH="/home/sc/.cask/bin:$PATH"
 #source /usr/local/bin/virtualenvwrapper.zsh
+#
+function cd() {
+    builtin cd $1
+    clear
+    ls
+}
+
