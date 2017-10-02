@@ -10,6 +10,7 @@
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_SHORTEN_STRATEGY="Default"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time battery)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,8 +55,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git python vi-mode tmux zsh-autosuggestions)
-#consider- pip ubuntu
+plugins=(git python vi-mode zsh-autosuggestions)
+#consider- pip ubuntu tmux
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 fortune | cowsay -f unipony-smaller
+#source /opt/ros/kinetic/setup.sh
 source /opt/ros/kinetic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
 source /etc/profile.d/autostart
